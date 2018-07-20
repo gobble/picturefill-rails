@@ -18,27 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-Add this line to your application layout (asset-pipeline enabled)
+The picturefill file will be added to the asset pipeline and available for you to use.
+Add this line to `app/assets/javascripts/application.js` or equivalent according
+to your project needs.
 
-    = javascript_include_tag 'picturefill.all'
+    //= require picturefill
 
-Or w/o asset-pipeline, add these two lines:
+You can also add in specific [picturefill plugins](https://github.com/scottjehl/picturefill/tree/master/src/plugins) by requiring the appropriate files. An example:
 
-    = javascript_include_tag 'matchmedia.min'
-    = javascript_include_tag 'picturefill.min'
-
-## ViewHelper
-
-### Example
-
-    <%= picturefill(default_url, "AltText") do %>
-      <%= image(small_url) %>
-      <%= image(medium_url, :min => 400) %>
-      <%= image(medium_high_dpi_url, :min => 400, :ratio => 1.5) %>
-      <%= image(medium_high_dpi_url, :min => 400, :ratio => 1.5, :webkit => true) %>
-      <%= image(large_url, :min => 1000) %>
-      <%= image(large_high_dpi_url, "(min-width: 1000px) and (min-device-pixel-ratio: 1.5)") %>
-    <% end %>
+    //= require picturefill/plugins/pf-gecko-picture
 
 ## Contributing
 
